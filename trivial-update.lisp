@@ -1,7 +1,7 @@
 ;;; -*- Mode: Lisp; Syntax: ANSI-Common-Lisp -*-
 ;;;
-;;; ASDF system definition for trivial-update - a library that provides
-;;; tools for easy modification of places with any given function.
+;;; The library that provides tools for easy modification of places with any
+;;; given function.
 ;;;
 ;;; Copyright (c) 2014 Mark Karpov
 ;;;
