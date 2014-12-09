@@ -32,6 +32,18 @@
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (defmacro update (place fn &rest args &environment env)
+    "This macro replaces value at PLACE by applying function FN to it. Value
+at PLACE is used as first argument for given function FN, other optional
+arguments ARGS will be used to fill the rest of the argument list. Parameter
+ENV is set by Common Lisp implementation during macro expansion.
+
+If value at PLACE should not be put as first argument of given function, use
+currying to pad some arguments. Combination of currying and &REST arguments
+will give you opportunity to pass old value at PLACE on any position in the
+argument list.
+
+If you need to pass old value at PLACE as key argument of FN, you will need
+to construct auxiliary lambda expression."
     (multiple-value-bind (vars forms result writer-form reader-form)
         (get-setf-expansion place env)
       (let ((g (gensym)))
