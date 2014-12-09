@@ -24,9 +24,9 @@
 ;;; OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 ;;; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-(defsystem     :trivial-update
-  :version     "0.1.0"
-  :description "tools for easy modification of places with any given function"
-  :author      "Mark Karpov"
-  :license     "MIT"
-  :components  ((:file "trivial-update")))
+(asdf:defsystem :trivial-update
+  :version      "0.1.0"
+  :description  "tools for easy modification of places with any given function"
+  :author       "Mark Karpov"
+  :license      "MIT"
+  :components   ((:file "trivial-update")))
