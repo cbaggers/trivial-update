@@ -37,5 +37,5 @@
       (let ((g (gensym)))
         `(let* ((,g ,fn)
                 ,@(mapcar #'list vars forms)
-                (,(car result) (apply ,g ,reader-form ,args)))
+                (,(car result) (funcall ,g ,reader-form ,@args)))
            ,writer-form)))))
