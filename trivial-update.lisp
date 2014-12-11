@@ -28,7 +28,7 @@
   (:use        #:common-lisp)
   (:export     #:update))
 
-(in-package :trivial-update)
+(in-package #:trivial-update)
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (defmacro update (place fn &rest args &environment env)
