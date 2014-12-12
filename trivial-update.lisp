@@ -30,9 +30,8 @@
 
 (in-package #:trivial-update)
 
-(eval-when (:compile-toplevel :load-toplevel :execute)
-  (defmacro update (place fn &rest args &environment env)
-    "This macro replaces value at PLACE by applying function FN to it. Value
+(defmacro update (place fn &rest args &environment env)
+  "This macro replaces value at PLACE by applying function FN to it. Value
 at PLACE is used as first argument for given function FN, other optional
 arguments ARGS will be used to fill the rest of the argument list. Parameter
 ENV is set by Common Lisp implementation during macro expansion.
@@ -44,10 +43,10 @@ argument list.
 
 If you need to pass old value at PLACE as key argument of FN, you will need
 to construct auxiliary lambda expression."
-    (multiple-value-bind (vars forms result writer-form reader-form)
-        (get-setf-expansion place env)
-      (let ((g (gensym)))
-        `(let* ((,g ,fn)
-                ,@(mapcar #'list vars forms)
-                (,(car result) (funcall ,g ,reader-form ,@args)))
-           ,writer-form)))))
+  (multiple-value-bind (vars forms result writer-form reader-form)
+      (get-setf-expansion place env)
+    (let ((g (gensym)))
+      `(let* ((,g ,fn)
+              ,@(mapcar #'list vars forms)
+              (,(car result) (funcall ,g ,reader-form ,@args)))
+         ,writer-form))))
