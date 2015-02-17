@@ -3,7 +3,7 @@
 ;;; The library that provides tools for easy modification of places with any
 ;;; given function.
 ;;;
-;;; Copyright (c) 2014 Mark Karpov
+;;; Copyright (c) 2014, 2015 Mark Karpov
 ;;;
 ;;; Permission is hereby granted, free of charge, to any person obtaining a
 ;;; copy of this software and associated documentation files (the
@@ -37,12 +37,11 @@ arguments ARGS will be used to fill the rest of the argument list. Parameter
 ENV is set by Common Lisp implementation during macro expansion.
 
 If value at PLACE should not be put as first argument of given function, use
-currying to pad some arguments. Combination of currying and &REST arguments
-will give you opportunity to pass old value at PLACE on any position in the
-argument list.
+partial application to pad some arguments. Combination of currying and &REST
+arguments will give you opportunity to pass old value at PLACE on any
+position in the argument list.
 
-If you need to pass old value at PLACE as key argument of FN, you will need
-to construct auxiliary lambda expression."
+Remember that keyword parameters are just pairs of normal arguments."
   (multiple-value-bind (vars forms result writer-form reader-form)
       (get-setf-expansion place env)
     (let ((g (gensym)))

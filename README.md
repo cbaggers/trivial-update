@@ -26,15 +26,14 @@ list. Parameter `env` is set by Common Lisp implementation during macro
 expansion.
 
 If value at `place` should not be put as first argument of given function,
-use currying to pad some arguments. Combination of currying and `&rest`
-arguments will give you opportunity to pass old value at `place` on any
-position in the argument list.
+use partial application to pad some arguments. Combination of currying and
+`&rest` arguments will give you opportunity to pass old value at `place` on
+any position in the argument list.
 
-If you need to pass old value at `place` as key argument of `fn`, you will
-need to construct auxiliary lambda expression.
+Remember that keyword parameters are just pairs of normal arguments.
 
 ## License
 
-Copyright (c) 2014 Mark Karpov
+Copyright (c) 2014, 2015 Mark Karpov
 
 Distributed under MIT License.
