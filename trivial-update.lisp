@@ -31,10 +31,10 @@
 (in-package #:trivial-update)
 
 (defmacro update (place fn &rest args &environment env)
-  "This macro replaces value at PLACE by applying function FN to it. Value
-at PLACE is used as first argument for given function FN, other optional
-arguments ARGS will be used to fill the rest of the argument list. Parameter
-ENV is set by Common Lisp implementation during macro expansion.
+  "Replace value at PLACE by applying function FN to it. Value at PLACE is
+used as the first argument for given function FN, other optional arguments
+ARGS will be used to fill the rest of the argument list. Parameter ENV is
+set by Common Lisp implementation during macro expansion.
 
 If value at PLACE should not be put as first argument of given function, use
 partial application to pad some arguments. Combination of currying and &REST
