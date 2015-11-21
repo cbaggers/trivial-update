@@ -1,21 +1,24 @@
 # trivial-update
 
-This is a little library that gives its user tools to easily change *place*
-with any supplied function. This library is most useful in cases when you
-have do deal with places that have complex structure.
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
+[![Quicklisp](http://quickdocs.org/badge/trivial-update.svg)](http://quickdocs.org/trivial-update/)
+
+Easily change *place* with any supplied function. This library is most
+useful in cases when you have do deal with places that have complex
+structure.
 
 ## Installation
 
 Copy files of this library in any place where ASDF can find them. Then you
 can use it in system definitions and ASDF will take care of the rest.
 
-Via Quicklisp:
+Via Quicklisp (recommended):
 
-```
+```common-lisp
 (ql:quickload "trivial-update")
 ```
 
-## Syntax and Description
+## Description
 
 `update place fn &rest args &environment env`
 
@@ -25,9 +28,9 @@ is used as first argument for given function `fn`, other optional arguments
 is set by Common Lisp implementation during macro expansion.
 
 If value at `place` should not be put as first argument of given function,
-use partial application to pad some arguments. Combination of currying and
-`&rest` arguments will give you opportunity to pass old value at `place` on
-any position in the argument list.
+use partial application to pad some arguments. Combination of partial
+application and `&rest` arguments will give you the opportunity to pass old
+value at `place` on any position in the argument list.
 
 Remember that keyword parameters are just pairs of normal arguments.
 
