@@ -36,6 +36,6 @@ Remember that keyword parameters are just pairs of normal arguments.
 
 ## License
 
-Copyright © 2014, 2015 Mark Karpov
+Copyright © 2014–2017 Mark Karpov
 
 Distributed under MIT License.
