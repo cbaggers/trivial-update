@@ -1,6 +1,7 @@
 # trivial-update
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/mrkkrp/trivial-update.svg?branch=master)](https://travis-ci.org/mrkkrp/trivial-update)
 [![Quicklisp](http://quickdocs.org/badge/trivial-update.svg)](http://quickdocs.org/trivial-update/)
 
 Easily change *place* with any supplied function. This library is most
